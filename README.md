@@ -1,0 +1,1 @@
+koa-celebrate is an koa middleware function that wraps the [joi](https://github.com/hapijs/joi/tree/master) validation library. This allows you to use this middleware in any single route, or globally, and ensure that all of your inputs are correct before any handler function. The middleware allows you to validate `ctx.request.params`, `ctx.request.body`, and `ctx.request.query`.
