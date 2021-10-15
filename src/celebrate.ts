@@ -1,24 +1,19 @@
-import { Context, Next, Request } from 'koa'
+import { Context, Next } from 'koa'
 import Joi, { Schema } from 'joi'
 import defaultsDeep from 'lodash/defaultsDeep'
 import intersection from 'lodash/intersection'
 import assignIn from 'lodash/assignIn'
 import forEach from 'lodash/forEach'
-import { DEFAULT_VALIDATE_KEYS } from './const'
+import { DEFAULT_VALIDATE_KEYS, REQ_ALIAS_KEY } from './const'
 import CelebrateError from './celebrate-error'
 
 const getContextValue = (key: string, ctx: Context) => {
-  const req = ctx.request as Request & {
-    body: any,
-    files: any
+  const req = ctx.request as Record<string, any>
+  if (REQ_ALIAS_KEY.includes(key)) {
+    return req[key] || {}
+  } else {
+    return ctx[key]
   }
-  if (key === 'body') {
-    return req.body || {}
-  }
-  if (key === 'files') {
-    return req.files || {}
-  }
-  return ctx[key]
 }
 
 export const celebrate = (validators: Record<string, Schema> = {}, opts = {}) => {
