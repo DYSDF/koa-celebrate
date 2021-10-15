@@ -1,7 +1,10 @@
 {
   "name": "koa-celebrate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "front end logger.",
+  "repository": {
+    "url": "https://github.com/DYSDF/koa-celebrate"
+  },
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "types/",
