@@ -1,7 +1,7 @@
 {
   "name": "koa-celebrate",
-  "version": "1.0.1",
-  "description": "front end logger.",
+  "version": "1.0.2",
+  "description": "koa validate middleware with joi.",
   "repository": {
     "url": "https://github.com/DYSDF/koa-celebrate"
   },
