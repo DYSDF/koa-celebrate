@@ -1,6 +1,6 @@
 {
   "name": "koa-celebrate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "koa validate middleware with joi.",
   "repository": {
     "url": "https://github.com/DYSDF/koa-celebrate"
@@ -48,5 +48,7 @@
     "tslib": "^2.3.0",
     "typescript": "^4.3.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "joi": "^17.4.2"
+  }
 }
